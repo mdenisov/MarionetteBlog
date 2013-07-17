@@ -18,14 +18,10 @@
     panelRegion: ->
       panelRegion = @getPanelRegion()
 
-      console.log panelRegion
-
       @layout.panelRegion.show panelRegion
 
     postsRegion: (posts) ->
       postsRegion = @getPostsRegion posts
-
-      console.log postsRegion
 
       @layout.postsRegion.show postsRegion
 

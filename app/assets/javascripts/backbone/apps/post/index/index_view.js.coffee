@@ -12,6 +12,7 @@
 
   class Index.Post extends App.Views.ItemView
     template: 'post/index/_post'
+    tagName:  'li'
 
   class Index.Empty extends App.Views.ItemView
     template: 'post/index/_empty'

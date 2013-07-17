@@ -4,7 +4,7 @@
 		urlRoot: -> Routes.posts_path()
 	
 	class Entities.PostCollection extends App.Entities.Collection
-		model: Entities.Crew
+		model: Entities.Post
 
 		url: -> Routes.posts_path()
 
