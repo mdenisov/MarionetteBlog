@@ -1,0 +1,43 @@
+.row
+  .span8
+    .row
+      .span8
+        %h4
+          %strong
+            %a{:href => "#"} Title of the post
+    .row
+      .span2
+        %a.thumbnail{:href => "#"}
+          %img{:alt => "", :src => "http://placehold.it/260x180"}/
+      .span6
+        %p
+          Lorem ipsum dolor sit amet, id nec conceptam conclusionemque. Et eam tation option. Utinam salutatus ex eum. Ne mea dicit tibique facilisi, ea mei omittam explicari conclusionemque, ad nobis propriae quaerendum sea.
+        %p
+          %a.btn{:href => "#"} Read more
+    .row
+      .span8
+        %p
+        %p
+          %i.icon-user
+          by
+          %a{:href => "#"} John
+          |
+          %i.icon-calendar
+          Sept 16th, 2012
+          |
+          %i.icon-comment
+          %a{:href => "#"} 3 Comments
+          |
+          %i.icon-share
+          %a{:href => "#"} 39 Shares
+          |
+          %i.icon-tags
+          Tags :
+          %a{:href => "#"}
+            %span.label.label-info Snipp
+          %a{:href => "#"}
+            %span.label.label-info Bootstrap
+          %a{:href => "#"}
+            %span.label.label-info UI
+          %a{:href => "#"}
+            %span.label.label-info growth

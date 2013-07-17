@@ -1,0 +1,4 @@
+Preguntes a buscar:
+  - Que era el (trigger: true) en les options de les rutes, era per fer que s'executes la ruta?
+  - En les entities el parametre del fetch de (resert: true)
+  - En els entities/_base/_fetch.js.coffee que es el que feia exactament? (crew controller)

@@ -1,0 +1,16 @@
+#header-region
+  
+.container-fluid
+  .row-fluid
+    .span2
+    .span8
+      #main-region
+    .span2
+  #footer-region
+
+= javascript_tag do
+  $(function() {
+  MarionetteBlog.start({
+  environment: "#{Rails.env}"
+  });
+  });
