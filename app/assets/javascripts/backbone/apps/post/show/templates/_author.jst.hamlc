@@ -1,0 +1,15 @@
+.span4.well
+  .row-fluid
+    .span3
+      %a.thumbnail{ href: ""}
+        %img{ src: "http://placehold.it/100x100" alt: ""}
+    .span8
+      %p
+        admin
+      %p
+        %strong
+          = @author
+      %span.badge.badge-warning
+        8 messages
+      %span.badge.badge-info
+        15 followers

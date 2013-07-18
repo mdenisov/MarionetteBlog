@@ -12,7 +12,12 @@
 
   class Index.Post extends App.Views.ItemView
     template: 'post/index/_post'
-    tagName:  'li'
+    # tagName:  'li'
+    className: 'row-fluid'
+
+    triggers:
+      "click .read-more"    :   "post:read-more:clicked"
+
 
   class Index.Empty extends App.Views.ItemView
     template: 'post/index/_empty'
@@ -21,4 +26,4 @@
     template: 'post/index/_posts'
     itemView: Index.Post
     emptyView:  Index.Empty
-    itemViewContainer:  'ul'
+    itemViewContainer:  '#posts'

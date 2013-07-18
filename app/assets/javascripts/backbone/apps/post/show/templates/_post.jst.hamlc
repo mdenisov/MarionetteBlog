@@ -1,0 +1,41 @@
+%h1= @title
+%p
+  %h3 Preface:
+  %br
+  = @preface
+%p
+  %h3 Description:
+  %br
+  = @description
+%p Tags: 
+  %a{ href: "#"}
+    %span.label.label-info
+      Snipp
+  %a{ href: "#"}
+    %span.label.label-info
+      Bootstrap
+  %a{ href: "#" }
+    %span.label.label-info
+      UI 
+  %a{ href: "#" }
+    %span.label.label-info
+      growth
+  | 
+  %i.icon-user
+  %a{href: "#"}
+    Admin
+  | 
+  %i.icon-calendar
+    = @created_at 
+  |
+  %i.icon-comment
+  %a{ href: "#"}
+    3 Comments
+  |
+  %i.icon-share
+  %a{ href: "#"}
+    39 Shares
+
+.form-actions
+  %a.btn#back
+    Back to Posts

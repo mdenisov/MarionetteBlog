@@ -15,7 +15,16 @@
         reset: true
       posts
 
+    getPost: (id) ->
+      post = new Entities.Post
+        id: id
+      post.fetch()
+      post
+
 
   App.reqres.setHandler "posts:entities", ->
     API.getPosts()
+
+  App.reqres.setHandler "crew:entity", (id) ->
+    API.getPost id
 

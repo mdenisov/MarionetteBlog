@@ -5,15 +5,15 @@
     initialize: ->
       posts = App.request "posts:entities"
 
-      #App.execute "when:fetched", posts, =>
+      App.execute "when:fetched", posts, =>
 
-      @layout = @getLayoutView posts
+        @layout = @getLayoutView posts
 
-      @listenTo @layout, "show", =>
-        @panelRegion()
-        @postsRegion posts
+        @listenTo @layout, "show", =>
+          @panelRegion()
+          @postsRegion posts
 
-      @show @layout
+        @show @layout
 
     panelRegion: ->
       panelRegion = @getPanelRegion()
@@ -22,6 +22,9 @@
 
     postsRegion: (posts) ->
       postsRegion = @getPostsRegion posts
+
+      @listenTo postsRegion, "childview:post:read-more:clicked", (child, args) ->
+        App.vent.trigger "post:read-more:clicked", args.model
 
       @layout.postsRegion.show postsRegion
 
