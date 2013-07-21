@@ -8,8 +8,8 @@
     className: 'well'
 
     triggers:
-      "click #back"       :     "post:show:back:clicked"
-
+      "click #back"         :     "post:show:back:clicked"
+      "click #delete-post"  :     "post:show:delete:clicked"
 
 
   class Show.Layout extends App.Views.Layout

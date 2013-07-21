@@ -21,10 +21,15 @@
       post.fetch()
       post
 
+    getNewPost: ->
+      new Entities.Post
+
 
   App.reqres.setHandler "posts:entities", ->
     API.getPosts()
 
-  App.reqres.setHandler "crew:entity", (id) ->
+  App.reqres.setHandler "post:entity", (id) ->
     API.getPost id
 
+  App.reqres.setHandler "new:post:entity", ->
+    API.getNewPost()

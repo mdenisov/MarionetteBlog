@@ -18,6 +18,9 @@
     panelRegion: ->
       panelRegion = @getPanelRegion()
 
+      @listenTo panelRegion, "panel:new-post:clicked", (child) =>
+        App.vent.trigger "post:new-post:clicked", child
+
       @layout.panelRegion.show panelRegion
 
     postsRegion: (posts) ->

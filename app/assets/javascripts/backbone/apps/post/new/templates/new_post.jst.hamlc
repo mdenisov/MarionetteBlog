@@ -1,0 +1,16 @@
+.controls
+  %label
+    Title:
+  %input{ type: 'text', name: 'title'}
+.controls
+  %label
+    Author:
+  %input{ type: 'text', name: 'author'}
+.controls
+  %label
+    Preface:
+  %input{ type: 'text', name: 'preface'}
+.controls
+  %label
+    Description:
+  %textarea{ name: 'description'}

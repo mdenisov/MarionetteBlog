@@ -10,6 +10,9 @@
   class Index.Panel extends App.Views.ItemView
     template: 'post/index/_panel'
 
+    triggers:
+      "click #new-post"     :   "panel:new-post:clicked"
+
   class Index.Post extends App.Views.ItemView
     template: 'post/index/_post'
     # tagName:  'li'

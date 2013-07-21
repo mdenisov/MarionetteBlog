@@ -5,9 +5,10 @@
     initialize: (options) ->
       { post, id } = options
 
-      post or= App.request "crew:entity", id
+      post or= App.request "post:entity", id
 
-      console.log post
+      @listenTo post, "destroy", ->
+        App.vent.trigger "post:destroyed", post
 
       App.execute "when:fetched", post, =>
 
@@ -27,8 +28,12 @@
     postRegion: (post) ->
       postRegion = @getPostRegion post
 
-      @listenTo postRegion, "post:show:back:clicked", (child) ->
-        App.vent.trigger "post:show:back:clicked", child
+      @listenTo postRegion, "post:show:back:clicked", (args) ->
+        App.vent.trigger "post:show:back:clicked", args.model
+
+      @listenTo postRegion, "post:show:delete:clicked", (args) ->
+        model = args.model 
+        if confirm "Are you sure you want to delte this Post?" then model.destroy() else false
 
       @layout.postRegion.show postRegion
 

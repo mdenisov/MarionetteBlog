@@ -1,0 +1,10 @@
+.panel.radius
+  #form-content-region
+  -if @footer
+    %footer
+      - if @buttons
+        .form-actions	
+          %div{ class: "#{@buttons.placement}"}
+            - for button in @buttons
+              %button{ type: "#{button.buttonType}", "data-form-button" => "#{button.type}", class: "#{button.className}"}
+                = button.text
