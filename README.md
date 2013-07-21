@@ -3,7 +3,7 @@ MarionetteBlog
 
 MarionetteBlog
 
-This App is for learging propouse, i'm going to start by the CRUD and then continue adding content.
+This App is for learning purpose, i'm going to start by the CRUD and then continue adding content.
 
 TODO:
 *  Finish the CRUD (Only Edit and repair some bugs)
