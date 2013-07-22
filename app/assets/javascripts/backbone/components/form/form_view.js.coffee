@@ -56,8 +56,8 @@
 		
 		addError: (name, error) ->
 			el = @$("[name='#{name}']")
-			sm = $("<small>").text(error)
-			el.after(sm).closest(".row").addClass("error")
+			sm = $("<span class= 'help-inline'>").text(error)
+			el.after(sm).closest(".control-group").addClass("error")
 		
       # syncStart: (model) ->
 		  # 	@addOpacityWrapper() if @config.syncing

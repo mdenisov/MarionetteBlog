@@ -10,6 +10,7 @@
     triggers:
       "click #back"         :     "post:show:back:clicked"
       "click #delete-post"  :     "post:show:delete:clicked"
+      "click #edit-post"    :     "post:show:edit:clicked"
 
 
   class Show.Layout extends App.Views.Layout

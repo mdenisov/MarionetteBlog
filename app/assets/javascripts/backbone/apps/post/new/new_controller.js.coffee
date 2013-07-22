@@ -13,7 +13,7 @@
       formView = App.request "form:wrapper", newView
       
       @listenTo newView, "form:cancel", =>
-        @region.close()
+        App.vent.trigger "post:canceled", post
 
       @show formView
 

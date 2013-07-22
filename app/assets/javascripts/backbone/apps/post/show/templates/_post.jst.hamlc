@@ -3,6 +3,9 @@
   %a.btn.btn-danger#delete-post{href: "#"}
     %i.icon-remove
       Delete
+  %a.btn.btn-primary#edit-post{href: "#"}
+    %i.icon-pencil
+      Edit
 %p
   %h3 Preface:
   %br

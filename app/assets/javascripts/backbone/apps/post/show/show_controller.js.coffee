@@ -31,6 +31,9 @@
       @listenTo postRegion, "post:show:back:clicked", (args) ->
         App.vent.trigger "post:show:back:clicked", args.model
 
+      @listenTo postRegion, "post:show:edit:clicked", (args) ->
+        App.vent.trigger "post:edit", args.model
+
       @listenTo postRegion, "post:show:delete:clicked", (args) ->
         model = args.model 
         if confirm "Are you sure you want to delte this Post?" then model.destroy() else false

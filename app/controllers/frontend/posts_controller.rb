@@ -18,6 +18,15 @@ class Frontend::PostsController < Frontend::ApplicationController
     end
   end
 
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(params[:post])
+      render "frontend/posts/show"
+    else
+      respond_with @post
+    end
+  end
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy

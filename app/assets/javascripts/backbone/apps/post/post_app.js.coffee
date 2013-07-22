@@ -2,9 +2,10 @@
 
   class PostApp.Router extends Marionette.AppRouter
     appRoutes:
-      "posts"         :     "index"
-      "posts/:title"  :     "show"
-      "posts/new"     :     "new"
+      "posts"           :     "index"
+      "posts/new"       :     "new"
+      "posts/:id"       :     "show"
+      "posts/:id/eidt"  :     "edit"
 
   API =
     index: ->
@@ -17,18 +18,27 @@
 
     new: ->
       new PostApp.New.Controller
+
+    edit: (id, post) ->
+      new PostApp.Edit.Controller
+        id: id
+        post: post
       
-  App.vent.on "post:show:back:clicked post:created post:destroyed", (post) ->
+  App.vent.on "post:show:back:clicked post:created post:destroyed post:canceled", (post) ->
     App.navigate Routes.posts_path()
     API.index()
 
-  App.vent.on "post:read-more:clicked", (post) ->
+  App.vent.on "post:read-more:clicked post:updated", (post) ->
     App.navigate Routes.post_path(post.id)
-    API.show post.title, post
+    API.show post.id, post
 
   App.vent.on "post:new-post:clicked", (post) ->
     App.navigate Routes.new_post_path()
     API.new()
+
+  App.vent.on "post:edit", (post) ->
+    App.navigate Routes.edit_post_path(post.id)
+    API.edit post.id, post
 
   App.addInitializer ->
     new PostApp.Router

@@ -2,19 +2,20 @@
   %label.control-label
     Title:
   .controls
-    %input{ type: 'text', name: 'title'}
+    %input{ type: 'text', name: 'title', value: @title}
 .control-group
   %label.control-label
     Author:
   .controls
-    %input{ type: 'text', name: 'author'}
+    %input{ type: 'text', name: 'author', value: @author}
 .control-group
   %label.control-label
     Preface:
   .controls
-    %input{ type: 'text', name: 'preface'}
+    %input{ type: 'text', name: 'preface', value: @preface}
 .control-group
   %label.control-label
     Description:
   .controls
     %textarea{ name: 'description'}
+      = @description
