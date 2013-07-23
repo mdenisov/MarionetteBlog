@@ -5,21 +5,25 @@
       "posts"           :     "index"
       "posts/new"       :     "new"
       "posts/:id"       :     "show"
-      "posts/:id/eidt"  :     "edit"
+      "posts/:id/edit"  :     "edit"
 
   API =
     index: ->
+      console.info "index"
       new PostApp.Index.Controller
 
     show: (id, post) ->
+      console.info "show"
       new PostApp.Show.Controller
         id: id
         post: post
 
     new: ->
+      console.info "new"
       new PostApp.New.Controller
 
     edit: (id, post) ->
+      console.info "edit"
       new PostApp.Edit.Controller
         id: id
         post: post
