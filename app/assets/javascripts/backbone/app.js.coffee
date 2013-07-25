@@ -15,11 +15,9 @@
   App.addInitializer ->
     App.module("HeaderApp").start()
     App.module("FooterApp").start()
-    
 
   App.reqres.setHandler "default:region", ->
     App.mainRegion
-
 
   App.on "initialize:after", ->
     @startHistory()

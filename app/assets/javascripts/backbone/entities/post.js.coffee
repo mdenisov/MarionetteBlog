@@ -3,14 +3,14 @@
 	class Entities.Post extends App.Entities.Model
 		urlRoot: -> Routes.posts_path()
 	
-	class Entities.PostCollection extends App.Entities.Collection
+	class Entities.PostsCollection extends App.Entities.Collection
 		model: Entities.Post
 
 		url: -> Routes.posts_path()
 
   API =
     getPosts: ->
-      posts = new Entities.PostCollection
+      posts = new Entities.PostsCollection
       posts.fetch
         reset: true
       posts

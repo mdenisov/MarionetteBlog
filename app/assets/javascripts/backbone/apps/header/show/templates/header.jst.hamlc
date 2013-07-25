@@ -5,15 +5,15 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.brand{:href => "#"} Marionette Blog
-      .nav-collapse
+      %a.brand#root{:href => "#posts"} Marionette Blog
+      .nav-collapse.pull-right
         %ul.nav
-          %li
-            %a{:href => "#"} Home
-          %li
-            %a{:href => "#"} About
-          %li
-            %a{:href => "#"} Contact
+          %li{ class: ""}
+            %a{:href => "#posts"} Posts
+          %li{ class: ""}
+            %a{:href => "#tags"} Tags
+          %li{ class: ""}
+            %a{:href => "#"} Categories
         %p.navbar-text.pull-right
           Logged in as
           %a{:href => "#"} username

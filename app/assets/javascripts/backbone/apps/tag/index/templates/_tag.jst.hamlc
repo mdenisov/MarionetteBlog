@@ -1,0 +1,6 @@
+%td= @name
+%td
+  %a.btn.btn-primary
+    Edit
+  %a.btn.btn-danger
+    Delete

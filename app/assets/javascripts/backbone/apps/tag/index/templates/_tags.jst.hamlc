@@ -1,0 +1,9 @@
+%h3 Tags Example
+%table.table.table-hover
+  %caption
+    Some Tags
+  %thead
+    %tr
+      %th Name
+      %th Options
+  %tbody#tags
