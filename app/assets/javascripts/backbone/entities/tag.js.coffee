@@ -1,7 +1,7 @@
 @MarionetteBlog.module "Entities", (Entities, App, Backbone, Marionette, $, _) ->
 
 	class Entities.Tag extends App.Entities.Model
-		urlRoot: -> Routes.tagss_path()
+		urlRoot: -> Routes.tags_path()
 	
 	class Entities.TagsCollection extends App.Entities.Collection
 		model: Entities.Tag

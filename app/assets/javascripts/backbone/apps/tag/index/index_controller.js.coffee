@@ -10,17 +10,34 @@
         @layout = @getLayoutView tags
 
         @listenTo @layout, "show", =>
-          # @newRegion()
+          @panelRegion tags
           @tagsRegion tags
 
         @show @layout
 
-    newRegion: ->
-
     tagsRegion: (tags) ->
       tagsRegion = @getTagsRegion tags
 
+      @listenTo tagsRegion, "childview:delete:tag:clicked", (args) ->
+        model = args.model
+        if confirm "Are you sure you want to delete this Tag?" then model.destroy() else false
+
       @layout.tagsRegion.show tagsRegion
+
+    panelRegion: (tags) ->
+      panelRegion = @getPanelRegion tags
+
+      @listenTo panelRegion, "new:tag:clicked", =>
+        @newRegion tags
+
+      @layout.panelRegion.show panelRegion
+
+    newRegion: (tags) ->
+      App.execute "new:tag", @layout.newRegion, tags
+
+    getPanelRegion: (tags) ->
+      new Index.Panel
+        collection: tags
 
     getTagsRegion: (tags) ->
       new Index.Tags

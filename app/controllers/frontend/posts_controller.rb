@@ -10,8 +10,8 @@ class Frontend::PostsController < Frontend::ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post])
-    if @post.save
+    @post = Post.new
+    if @post.update_attributes(params)
       render "frontend/posts/show"
     else
       respond_with @post
@@ -20,7 +20,7 @@ class Frontend::PostsController < Frontend::ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update_attributes(params[:post])
+    if @post.update_attributes(params)
       render "frontend/posts/show"
     else
       respond_with @post

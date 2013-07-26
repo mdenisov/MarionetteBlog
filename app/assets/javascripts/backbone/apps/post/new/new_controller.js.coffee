@@ -5,19 +5,22 @@
     initialize: ->
 
       post = App.request "new:post:entity"
+      tags = App.request "tags:entities"
 
       @listenTo post, "created", ->
         App.vent.trigger "post:created", post
 
-      newView = @getNewView post
-      formView = App.request "form:wrapper", newView
-      
-      @listenTo newView, "form:cancel", =>
-        App.vent.trigger "post:canceled", post
+      App.execute "when:fetched", tags, =>
+        newView = @getNewView post, tags
+        formView = App.request "form:wrapper", newView
+        
+        @listenTo newView, "form:cancel", =>
+          App.vent.trigger "post:canceled", post
 
-      @show formView
+        @show formView
 
-    getNewView: (post) ->
+    getNewView: (post, tags) ->
       new New.Post
         model: post
+        tags: tags
 

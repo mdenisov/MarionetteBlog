@@ -18,3 +18,9 @@
     Description:
   .controls
     %textarea{ name: 'description'}
+.control-group
+  - if @tags
+    - for tag in @tags
+      %input{ type: 'checkbox', value: "#{tag.id}", name: 'tag_ids[]'}
+      %label.checkbox.inline
+        = tag.name

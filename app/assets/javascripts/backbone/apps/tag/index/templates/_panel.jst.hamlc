@@ -1,0 +1,5 @@
+%h3 Tags Example
+
+%a.btn.btn-success#new-tag
+  Create New Tag
+

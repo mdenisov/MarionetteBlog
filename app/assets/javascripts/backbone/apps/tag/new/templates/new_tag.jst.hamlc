@@ -1,0 +1,5 @@
+.controls-group
+  %label.control-label
+    Name:
+  .controls
+    %input{ type: 'text', name: 'name' }

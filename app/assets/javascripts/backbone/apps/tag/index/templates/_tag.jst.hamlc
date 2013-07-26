@@ -1,6 +1,6 @@
 %td= @name
 %td
-  %a.btn.btn-primary
+  %a.btn.btn-primary#edit-tag
     Edit
-  %a.btn.btn-danger
+  %a.btn.btn-danger#delete-tag
     Delete

@@ -13,7 +13,7 @@
           %li{ class: ""}
             %a{:href => "#tags"} Tags
           %li{ class: ""}
-            %a{:href => "#"} Categories
+            %a{:href => "#categories"} Categories
         %p.navbar-text.pull-right
           Logged in as
           %a{:href => "#"} username

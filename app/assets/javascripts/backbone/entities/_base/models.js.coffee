@@ -14,7 +14,7 @@
 		
 		save: (data, options = {}) ->
 			isNew = @isNew()
-			
+
 			_.defaults options,
 				wait: true
 				success: 	_.bind(@saveSuccess, @, isNew, options.collection)

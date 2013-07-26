@@ -8,6 +8,13 @@
     index: ->
       new TagApp.Index.Controller
 
+    newTag: (region, collection) ->
+      new TagApp.New.Controller
+        region: region
+        collection: collection
+
+  App.commands.setHandler "new:tag", (region, collection) ->
+    API.newTag region, collection
 
   App.addInitializer ->
     new TagApp.Router
