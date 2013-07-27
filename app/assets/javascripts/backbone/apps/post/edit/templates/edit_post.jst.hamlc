@@ -2,20 +2,26 @@
   %label.control-label
     Title:
   .controls
-    %input{ type: 'text', name: 'title', value: @title}
+    %input{ type: 'text', name: 'title', value: @model.title}
 .control-group
   %label.control-label
     Author:
   .controls
-    %input{ type: 'text', name: 'author', value: @author}
+    %input{ type: 'text', name: 'author', value: @model.author}
 .control-group
   %label.control-label
     Preface:
   .controls
-    %input{ type: 'text', name: 'preface', value: @preface}
+    %input{ type: 'text', name: 'preface', value: @model.preface}
 .control-group
   %label.control-label
     Description:
   .controls
     %textarea{ name: 'description'}
-      = @description
+      = @model.description
+.control-group
+  - if @tags
+    - for tag in @tags
+      %input{ type: 'checkbox', value: "#{tag.id}", name: 'tag_ids[]', checked: _.contains(@model_tags, tag.id)}
+      %label.checkbox.inline
+        = tag.name

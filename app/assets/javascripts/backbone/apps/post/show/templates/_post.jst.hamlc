@@ -15,18 +15,10 @@
   %br
   = @description
 %p Tags: 
-  %a{ href: "#"}
-    %span.label.label-info
-      Snipp
-  %a{ href: "#"}
-    %span.label.label-info
-      Bootstrap
-  %a{ href: "#" }
-    %span.label.label-info
-      UI 
-  %a{ href: "#" }
-    %span.label.label-info
-      growth
+  - for tag in @tags
+    %a{ href: "#"}
+      %span.label.label-info
+        = tag['name']
   | 
   %i.icon-user
   %a{href: "#"}

@@ -6,13 +6,14 @@
       { post, id } = options
 
       post or= App.request "post:entity", id
+      tags = App.request "tags:entities"
 
       @listenTo post, "updated", ->
         App.vent.trigger "post:updated", post
 
-      App.execute "when:fetched", post, =>
+      App.execute "when:fetched", [post, tags], =>
 
-        editView = @getEditView post
+        editView = @getEditView post, tags
         formView = App.request "form:wrapper", editView
 
         @listenTo editView, "form:cancel", =>
@@ -20,7 +21,8 @@
 
         @show formView
 
-    getEditView: (post) ->
+    getEditView: (post, tags) ->
       new Edit.Post
         model: post
+        tags: tags
 

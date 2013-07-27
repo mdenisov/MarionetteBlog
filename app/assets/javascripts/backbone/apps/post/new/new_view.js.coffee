@@ -4,7 +4,6 @@
     template: 'post/new/new_post'
 
     initialize: ->
-      console.info @
       @setInstancePropertiesFor "tags"
 
     serializeData: ->

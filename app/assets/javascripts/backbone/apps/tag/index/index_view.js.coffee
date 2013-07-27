@@ -18,6 +18,7 @@
 
   class Index.Empty extends App.Views.ItemView
     template: 'tag/index/_empty'
+    tagName:  'tr'
 
   class Index.Panel extends App.Views.ItemView
     template: 'tag/index/_panel'
