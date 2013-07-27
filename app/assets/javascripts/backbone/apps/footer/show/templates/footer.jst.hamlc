@@ -1,2 +1,8 @@
-%footer
-  %p &copy; Company 2013
+%footer.footer
+  %small
+    Marionette Blog by Francesc Gil
+  %nav
+    %ul
+      %li
+        %a{ href: "https://github.com/XescuGC/MarionetteBlog", target: "_blank" }
+          GitHub Repo  
