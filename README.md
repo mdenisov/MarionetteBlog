@@ -3,8 +3,9 @@ MarionetteBlog
 
 MarionetteBlog
 
-This App is for learning purpose, i'm going to start by the CRUD and then continue adding content.
-To Build this app I've use: 
+MarionetteBlog
+
+This App is for learning purpose, i'm going to start by the CRUD and then i will continue adding content. This App is build with: 
 *  [MarionetteJS v1.0.4](http://marionettejs.com/)
 *  [Backbone.js 1.0.0](http://backbonejs.org/)
 *  [Underscore.js 1.4.4](http://underscorejs.org/)
