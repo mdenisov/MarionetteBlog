@@ -10,6 +10,7 @@ To Build this app I've use:
 *  [Underscore.js 1.4.4](http://underscorejs.org/)
 *  Rails 3.2.13
 *  [Mongoid](http://mongoid.org/en/mongoid/index.html)
+*  Haml
 
 TODO:
 ==============
