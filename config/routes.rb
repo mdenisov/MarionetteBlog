@@ -1,7 +1,9 @@
 MarionetteBlog::Application.routes.draw do
   
   scope module: 'frontend' do
-    resources :posts    
+    resources :posts do
+      resources :comments
+    end
     resources :tags
     resources :categories
   end

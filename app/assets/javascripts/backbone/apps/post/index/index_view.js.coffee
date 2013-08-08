@@ -20,6 +20,7 @@
 
     triggers:
       "click .read-more"    :   "post:read-more:clicked"
+      "click .title"        :   "post:read-more:clicked"
 
 
   class Index.Empty extends App.Views.ItemView

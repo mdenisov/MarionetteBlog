@@ -2,7 +2,7 @@
   .span8
     %h4
       %strong
-        %a{:href => "#"}= @title
+        %a.title{:href => "#"}= @title
 .row-fluid
   .span3
     %a.thumbnail{:href => "#"}
