@@ -14,6 +14,8 @@
             %a{:href => "#tags"} Tags
           %li{ class: ""}
             %a{:href => "#categories"} Categories
+          %li{ class: ""}
+            %a{:href => "#file_upload"} File Upload
         %p.navbar-text.pull-right
           Logged in as
           %a{:href => "#"} username

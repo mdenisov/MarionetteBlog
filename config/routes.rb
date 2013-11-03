@@ -6,6 +6,7 @@ MarionetteBlog::Application.routes.draw do
     end
     resources :tags
     resources :categories
+    post '/upload_file'     =>    'uploads#upload_file'
   end
 
   root to: 'frontend/home#index'

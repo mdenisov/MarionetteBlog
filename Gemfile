@@ -11,10 +11,16 @@ gem 'oj'
 gem 'gon'
 gem 'js-routes'
 gem 'mongoid'
-gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
+# Carrirewave for Mongoid
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'rmagick'
+# gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
 gem 'mongoid_fulltext'
 gem 'ruby_parser'
 gem 'haml-rails'
+
+# Gem to parse pdf/ppt to images
+gem 'docsplit'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -24,6 +30,7 @@ gem "twitter-bootstrap-rails"
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'quiet_assets'
 	gem 'eco'
 	gem 'compass-rails'
   gem 'haml_coffee_assets'

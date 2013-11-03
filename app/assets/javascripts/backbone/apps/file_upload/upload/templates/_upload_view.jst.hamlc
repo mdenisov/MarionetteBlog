@@ -1,1 +1,7 @@
-%form{id: 'my-awesome-dropzone', action: '/target',class: 'dropzone'}
+.well#dropzone-form
+  %form{id: 'my-awesome-dropzone', action: '/upload_file', class: 'dropzone'}
+
+:javascript
+  $(window).bind('load', function(){
+    // $('#dropzone-form').html("<form id='my-awesome-dropzone' action='/upload_file' class='dropzone'></form>"); 
+  })

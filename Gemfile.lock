@@ -30,11 +30,15 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     builder (3.0.4)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+    carrierwave-mongoid (0.6.3)
+      carrierwave (>= 0.8.0, < 0.10.0)
+      mongoid (>= 3.0, < 5.0)
+      mongoid-grid_fs (~> 1.3)
     chunky_png (1.2.8)
-    climate_control (0.0.3)
-      activesupport (>= 3.0)
-    cocaine (0.5.1)
-      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -50,6 +54,7 @@ GEM
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
     daemons (1.1.9)
+    docsplit (0.7.2)
     eco (1.0.0)
       coffee-script
       eco-source
@@ -97,8 +102,9 @@ GEM
       moped (~> 1.4)
       origin (~> 1.0)
       tzinfo (~> 0.3.22)
-    mongoid-paperclip (0.0.8)
-      paperclip (>= 2.3.6)
+    mongoid-grid_fs (1.9.0)
+      mime-types (~> 1.19)
+      mongoid (~> 3.0)
     mongoid_fulltext (0.6.1)
       mongoid (~> 3.0)
       unicode_utils (~> 1.0.0)
@@ -106,13 +112,9 @@ GEM
     multi_json (1.7.7)
     oj (2.1.2)
     origin (1.1.0)
-    paperclip (3.4.2)
-      activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.5.0)
-      mime-types
     polyglot (0.3.3)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rabl (0.8.5)
       activesupport (>= 2.3.14)
     rack (1.4.5)
@@ -141,6 +143,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.5)
+    rmagick (2.13.2)
     ruby_parser (3.1.3)
       sexp_processor (~> 4.1)
     sass (3.2.9)
@@ -181,8 +184,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  carrierwave-mongoid
   coffee-rails (~> 3.2.1)
   compass-rails
+  docsplit
   eco
   execjs
   gon
@@ -192,11 +197,12 @@ DEPENDENCIES
   js-routes
   less-rails
   mongoid
-  mongoid-paperclip
   mongoid_fulltext
   oj
+  quiet_assets
   rabl
   rails (= 3.2.13)
+  rmagick
   ruby_parser
   sass-rails (~> 3.2.3)
   therubyracer
