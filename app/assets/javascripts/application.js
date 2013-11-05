@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-fileupload/basic
 //= require lib/underscore
 //= require hamlcoffee
 //= require lib/backbone

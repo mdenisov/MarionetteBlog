@@ -1,7 +1,26 @@
-.well#dropzone-form
-  %form{id: 'my-awesome-dropzone', action: '/upload_file', class: 'dropzone'}
+.well
+  %form{id: 'fileupload', action: '/upload_file'}
 
 :javascript
-  $(window).bind('load', function(){
-    // $('#dropzone-form').html("<form id='my-awesome-dropzone' action='/upload_file' class='dropzone'></form>"); 
+  $('#fileupload').fileupload({
+    dataType: 'json',
+    add: function(e, data) {
+      var name = data.files[0].name;
+      data.context = $("<div class='upload'>" + name + "<div class='progress progress-striped active'><div class='bar' style='width: 0%'></div></div>").appendTo('#fileupload');
+      data.submit();
+    },
+    progress: function (e, data) {
+      if (data.context){
+        console.log('progress');
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+        console.log(progress);
+        console.log(data.context.find('bar'));
+        data.context.find('bar').css('width', progress + '%');
+      };
+      // $('.progress .progress-bar').css(
+      //   'width',
+      //   progress + '%'
+      // );
+    }
   })
+

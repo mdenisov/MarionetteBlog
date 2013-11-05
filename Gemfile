@@ -33,6 +33,7 @@ group :assets do
   gem 'quiet_assets'
 	gem 'eco'
 	gem 'compass-rails'
+  gem "jquery-fileupload-rails"
   gem 'haml_coffee_assets'
   gem 'execjs'
   gem 'therubyracer', :platforms => :ruby
