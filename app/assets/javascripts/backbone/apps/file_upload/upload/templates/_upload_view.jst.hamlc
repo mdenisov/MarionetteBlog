@@ -1,26 +1,25 @@
 .well
-  %form{id: 'fileupload', action: '/upload_file'}
+  %form{id: 'fileupload', "data-url" => 'uploads/upload_file'}
+  =# %input{ id: "fileupload", type: "file", name: "files[]", "data-url" => "uploads/upload_file", "multiple" => ""}
 
 :javascript
   $('#fileupload').fileupload({
     dataType: 'json',
     add: function(e, data) {
       var name = data.files[0].name;
-      data.context = $("<div class='upload'>" + name + "<div class='progress progress-striped active'><div class='bar' style='width: 0%'></div></div>").appendTo('#fileupload');
+      data.context = $("<div class='upload'>" + name + "<div class='progress progress-info progress-striped active'><div class='bar' style='width: 0%'></div></div>").appendTo('#fileupload');
       data.submit();
     },
     progress: function (e, data) {
       if (data.context){
         console.log('progress');
         var progress = parseInt(data.loaded / data.total * 100, 10);
-        console.log(progress);
-        console.log(data.context.find('bar'));
-        data.context.find('bar').css('width', progress + '%');
+        window.data_context_bar = data.context;
+        data.context.find('.bar').css('width', progress + '%');
       };
-      // $('.progress .progress-bar').css(
-      //   'width',
-      //   progress + '%'
-      // );
+    },
+    done: function(e, data) {
+      console.log('done');
+      data.context.find('.progress').removeClass('progress-info active progress-striped').addClass('progress-success');
     }
-  })
-
+  });

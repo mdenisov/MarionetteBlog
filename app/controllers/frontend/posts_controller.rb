@@ -1,5 +1,4 @@
 class Frontend::PostsController < Frontend::ApplicationController
-	respond_to :json
 
   def index
     @posts = Post.all
